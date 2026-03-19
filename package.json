@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "lint:mfe-strict": "bash scripts/strict-mfe-lint.sh"
+    "lint:mfe-strict": "bash scripts/strict-mfe-lint.sh",
+    "serve:all": "npx nx run-many --target=serve --projects=dashboard,login,student_details --parallel"
   },
   "private": true,
   "devDependencies": {

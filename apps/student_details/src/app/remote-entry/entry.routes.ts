@@ -6,9 +6,11 @@ export const remoteRoutes: Route[] = [
   {
     path: '',
     component: RemoteEntry,
-  },
-  {
-    path: 'biodata',
-    component: StudentBiodata,
+    children: [
+      {
+        path: '',
+        component: StudentBiodata,
+      },
+    ],
   },
 ];
