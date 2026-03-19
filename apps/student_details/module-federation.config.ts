@@ -1,8 +1,10 @@
 import { ModuleFederationConfig } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
-  name: 'dashboard',
-  remotes: ['login', 'student_details'],
+  name: 'student_details',
+  exposes: {
+    './Routes': 'apps/student_details/src/app/remote-entry/entry.routes.ts',
+  },
 };
 
 /**

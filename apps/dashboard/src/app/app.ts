@@ -29,4 +29,8 @@ export class App implements OnInit {
         });
       });
   }
+
+  showUserDetails() {
+    this.router.navigateByUrl('user-details');
+  }
 }
