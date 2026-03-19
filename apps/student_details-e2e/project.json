@@ -1,0 +1,10 @@
+{
+  "name": "student_details-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/student_details-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["student_details"],
+  "// targets": "to see all targets run: nx show project student_details-e2e --web",
+  "targets": {}
+}

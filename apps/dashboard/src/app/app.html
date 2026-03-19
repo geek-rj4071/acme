@@ -1,5 +1,6 @@
 <div class="dashboard-nav">Admin Dashboard</div>
 <div *ngIf="isLoggedIn$ | async; else signIn">
   You are authenticated so you can see this content.
+  <div>see your details: <span><button (click)="showUserDetails()">User Details</button></span></div>
 </div>
 <ng-template #signIn><router-outlet></router-outlet></ng-template>

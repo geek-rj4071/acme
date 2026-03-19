@@ -1,29 +1,29 @@
 {
-  "name": "login",
+  "name": "student_details",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "ng-mf",
-  "sourceRoot": "apps/login/src",
+  "prefix": "app",
+  "sourceRoot": "apps/student_details/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/login",
-        "index": "apps/login/src/index.html",
-        "main": "apps/login/src/main.ts",
-        "tsConfig": "apps/login/tsconfig.app.json",
+        "outputPath": "dist/apps/student_details",
+        "index": "apps/student_details/src/index.html",
+        "main": "apps/student_details/src/main.ts",
+        "tsConfig": "apps/student_details/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/login/public"
+            "input": "apps/student_details/public"
           }
         ],
-        "styles": ["apps/login/src/styles.scss"],
+        "styles": ["apps/student_details/src/styles.scss"],
         "customWebpackConfig": {
-          "path": "apps/login/webpack.config.ts"
+          "path": "apps/student_details/webpack.config.ts"
         }
       },
       "configurations": {
@@ -42,7 +42,7 @@
           ],
           "outputHashing": "all",
           "customWebpackConfig": {
-            "path": "apps/login/webpack.prod.config.ts"
+            "path": "apps/student_details/webpack.prod.config.ts"
           }
         },
         "development": {
@@ -60,24 +60,23 @@
       "continuous": true,
       "executor": "@nx/angular:dev-server",
       "options": {
-        "port": 4300,
-        "publicHost": "http://localhost:4300"
+        "port": 4301,
+        "publicHost": "http://localhost:4301"
       },
       "configurations": {
         "production": {
-          "buildTarget": "login:build:production"
+          "buildTarget": "student_details:build:production"
         },
         "development": {
-          "buildTarget": "login:build:development"
+          "buildTarget": "student_details:build:development"
         }
       },
-      "defaultConfiguration": "development",
-      "dependsOn": ["dashboard:serve"]
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "login:build"
+        "buildTarget": "student_details:build"
       }
     },
     "lint": {
@@ -87,7 +86,7 @@
       "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../coverage/apps/login"
+        "reportsDirectory": "../../coverage/apps/student_details"
       }
     },
     "serve-static": {
@@ -95,16 +94,16 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "login:build",
-        "port": 4300,
+        "buildTarget": "student_details:build",
+        "port": 4301,
         "watch": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "login:build:development"
+          "buildTarget": "student_details:build:development"
         },
         "production": {
-          "buildTarget": "login:build:production"
+          "buildTarget": "student_details:build:production"
         }
       }
     }

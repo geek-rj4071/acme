@@ -7,6 +7,11 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('login/Routes').then((m) => m!.remoteRoutes),
   },
   {
+    path: 'user-details',
+    loadChildren: () =>
+      import('student_details/Routes').then((m) => m!.remoteRoutes),
+  },
+  {
     path: '',
     component: App,
   },
