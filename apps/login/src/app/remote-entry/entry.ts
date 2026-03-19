@@ -3,24 +3,26 @@ import { NxWelcome } from './nx-welcome';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '@acme/data-access-user';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterOutlet],
   selector: 'ng-mf-login-entry',
   template: `<div class="login-app">
-    <form class="login-form" (ngSubmit)="login()">
-      <label>
-        Username:
-        <input type="text" name="username" [(ngModel)]="username" />
-      </label>
-      <label>
-        Password:
-        <input type="password" name="password" [(ngModel)]="password" />
-      </label>
-      <button type="submit">Login</button>
-    </form>
-    <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
-  </div>`,
+      <form class="login-form" (ngSubmit)="login()">
+        <label>
+          Username:
+          <input type="text" name="username" [(ngModel)]="username" />
+        </label>
+        <label>
+          Password:
+          <input type="password" name="password" [(ngModel)]="password" />
+        </label>
+        <button type="submit">Login</button>
+      </form>
+      <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
+    </div>
+    <router-outlet></router-outlet>`,
   styles: [
     `
       .login-app {
