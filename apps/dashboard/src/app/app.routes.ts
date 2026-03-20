@@ -2,11 +2,17 @@ import { Route } from '@angular/router';
 import { App } from './app';
 import { loadRemoteModule } from '@nx/angular/mf';
 import { loadRemote } from '@module-federation/enhanced/runtime';
+import { Homepage } from './home/homepage';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: App,
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: Homepage,
   },
   {
     path: 'login',

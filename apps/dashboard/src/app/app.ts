@@ -10,27 +10,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App implements OnInit {
-  private router = inject(Router);
-  private userService = inject(UserService);
-  isLoggedIn$ = this.userService.isUserLoggedIn$;
-
-  ngOnInit() {
-    this.isLoggedIn$
-      .pipe(distinctUntilChanged())
-      .subscribe(async (loggedIn) => {
-        // Queue the navigation after initialNavigation blocking is completed
-        setTimeout(() => {
-          if (!loggedIn) {
-            this.router.navigateByUrl('login');
-          } else {
-            this.router.navigateByUrl('');
-          }
-        });
-      });
-  }
-
-  showUserDetails() {
-    this.router.navigateByUrl('biodata');
-  }
-}
+export class App {}
