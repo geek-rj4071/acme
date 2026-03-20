@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "lint:mfe-strict": "bash scripts/strict-mfe-lint.sh"
+    "lint:mfe-strict": "bash scripts/strict-mfe-lint.sh",
+    "serve:all": "npx nx run-many --target=serve --projects=dashboard,login,student_details --parallel"
   },
   "private": true,
   "devDependencies": {
@@ -67,6 +68,7 @@
     "@angular/compiler": "~21.1.0",
     "@angular/core": "~21.1.0",
     "@angular/forms": "~21.1.0",
+    "@angular/material": "^21.2.3",
     "@angular/platform-browser": "~21.1.0",
     "@angular/router": "~21.1.0",
     "@nx/angular": "22.6.0",

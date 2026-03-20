@@ -1,10 +1,4 @@
-<div class="dashboard-nav">Admin Dashboard</div>
-<div>
-  <div class="text-xl font-medium text-black dark:text-white">ChitChat</div>
-  <p class="text-gray-500 dark:text-gray-400">You have a new message!</p>
+<div class="dashboard-shell">
+  <acme-breadcrumb></acme-breadcrumb>
+  <router-outlet></router-outlet>
 </div>
-<div *ngIf="isLoggedIn$ | async; else signIn">
-  You are authenticated so you can see this content.
-  <div>see your details: <span><button (click)="showUserDetails()">User Details</button></span></div>
-</div>
-<ng-template #signIn><router-outlet></router-outlet></ng-template>
