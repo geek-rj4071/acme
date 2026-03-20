@@ -1,0 +1,21 @@
+<nav class="mf-breadcrumb" aria-label="Breadcrumb">
+  @if (breadcrumb$ | async; as breadcrumb) {
+    <ol class="mf-breadcrumb-list">
+      @for (item of breadcrumb; track $index; let last = $last) {
+        <li class="mf-breadcrumb-item">
+          @if (item.url && !last) {
+            <a [routerLink]="item.url" class="mf-breadcrumb-link">
+              {{ item.label }}
+            </a>
+          } @else {
+            <span class="mf-breadcrumb-current">{{ item.label }}</span>
+          }
+
+          @if (!last) {
+            <span aria-hidden="true" class="mf-breadcrumb-separator">/</span>
+          }
+        </li>
+      }
+    </ol>
+  }
+</nav>
